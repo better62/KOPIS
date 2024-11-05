@@ -3,12 +3,16 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 import requests
 import xml.etree.ElementTree as ET
+import gdown
 
 service_key = "9e01c797c9504aa68b51104412042f2a"
 
 preprocessor = load('model/preprocessor.joblib')
-transformed_data = load('model/transformed_data.joblib')
-performance_codes = load('model/performance_codes.joblib')
+
+file_id = "1A4hpBE6P7DSvpqA2nzHt_ksQ3mLQB1Uo"
+url = f'https://drive.google.com/uc?id={file_id}'
+gdown.download(url, output, quiet=True)
+transformed_data = load(output)
 
 def make_df(gender, year, genre, region, price):
     if gender == "남성":
