@@ -3,11 +3,17 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 import requests
 import xml.etree.ElementTree as ET
+import os
 
 service_key = "9e01c797c9504aa68b51104412042f2a"
 
-preprocessor = load('./preprocessor.joblib')
-transformed_data = load('./transformed_data.joblib')
+current_dir = os.path.dirname(os.path.abspath(__file__))
+pre_path = os.path.join(current_dir, 'model', 'preprocessor.joblib')
+
+preprocessor = load(pre_path)
+
+tran_path = os.path.join(current_dir, 'model', 'transformed_data.joblib')
+transformed_data = load(tran_path)
 
 def make_df(gender, year, genre, region, price):
     if gender == "남성":
