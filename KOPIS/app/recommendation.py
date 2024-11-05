@@ -6,9 +6,9 @@ import xml.etree.ElementTree as ET
 
 service_key = "9e01c797c9504aa68b51104412042f2a"
 
-preprocessor = load('better62/kopis/main/KOPIS/model/preprocessor.joblib')
-transformed_data = load('better62/kopis/main/KOPIS/model/transformed_data.joblib')
-performance_codes = load('better62/kopis/main/KOPIS/model/performance_codes.joblib')
+preprocessor = load('model/preprocessor.joblib')
+transformed_data = load('model/transformed_data.joblib')
+performance_codes = load('model/performance_codes.joblib')
 
 def make_df(gender, year, genre, region, price):
     if gender == "남성":
