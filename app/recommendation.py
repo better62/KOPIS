@@ -8,7 +8,7 @@ import gdown
 service_key = "9e01c797c9504aa68b51104412042f2a"
 
 preprocessor = load('model/preprocessor.joblib')
-
+performance_codes = load('model/performance_codes.joblib')
 file_id = "1A4hpBE6P7DSvpqA2nzHt_ksQ3mLQB1Uo"
 url = 'https://drive.google.com/uc?id={file_id}'
 gdown.download(url, output, quiet=True)
