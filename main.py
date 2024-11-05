@@ -135,7 +135,7 @@ if "date" not in st.session_state:
 
                         
 if st.session_state.context == "menu":
-    with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+    with st.chat_message("assistant", avatar="imgs/icon.png"):
         st.markdown("원하는 메뉴를 선택하세요.")
 
         if st.button("기간별 예매 통계 조회"):
@@ -170,8 +170,8 @@ if prompt := st.chat_input("질문을 입력하세요."):
         if st.button("이전 메뉴"):
             st.session_state.context = "menu"
         st.session_state.date = prompt
-        st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png").markdown(f"입력하신 날짜는 **{st.session_state.date}**입니다.")
-        st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png").markdown("통계 정보를 불러오고 있습니다.")
+        st.chat_message("assistant", avatar="imgs/icon.png").markdown(f"입력하신 날짜는 **{st.session_state.date}**입니다.")
+        st.chat_message("assistant", avatar="imgs/icon.png").markdown("통계 정보를 불러오고 있습니다.")
         result = date_analysis(st.session_state.date)
         date_visual(result)
 
@@ -180,8 +180,8 @@ if prompt := st.chat_input("질문을 입력하세요."):
         if st.button("이전 메뉴"):
             st.session_state.context = "menu"
         st.session_state.region_date = prompt
-        st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png").markdown(f"입력하신 지역은 **{st.session_state.region}**입니다.")
-        st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png").markdown(f"입력하신 날짜는 **{st.session_state.region_date}**입니다.")
+        st.chat_message("assistant", avatar="imgs/icon.png").markdown(f"입력하신 지역은 **{st.session_state.region}**입니다.")
+        st.chat_message("assistant", avatar="imgs/icon.png").markdown(f"입력하신 날짜는 **{st.session_state.region_date}**입니다.")
         stdate, eddate = st.session_state.region_date.split('~')
         result = region_analysis(st.session_state.region, stdate, eddate)
         region_visual(result)
@@ -190,8 +190,8 @@ if prompt := st.chat_input("질문을 입력하세요."):
         if st.button("이전 메뉴"):
             st.session_state.context = "menu"
         st.session_state.genre_date = prompt
-        st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png").markdown(f"입력하신 장르는 **{st.session_state.genre}**입니다.")
-        st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png").markdown(f"입력하신 날짜는 **{st.session_state.genre_date}**입니다.")
+        st.chat_message("assistant", avatar="imgs/icon.png").markdown(f"입력하신 장르는 **{st.session_state.genre}**입니다.")
+        st.chat_message("assistant", avatar="imgs/icon.png").markdown(f"입력하신 날짜는 **{st.session_state.genre_date}**입니다.")
         stdate, eddate = st.session_state.genre_date.split('~')
         result = genre_analysis(st.session_state.genre, stdate, eddate)
         genre_visual(result)
@@ -200,8 +200,8 @@ if prompt := st.chat_input("질문을 입력하세요."):
         if st.button("이전 메뉴"):
             st.session_state.context = "menu"
         st.session_state.performance = prompt
-        st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png").markdown(f"입력하신 공연은 **{st.session_state.performance}**입니다.")
-        st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png").markdown("공연 정보를 불러오고 있습니다.")
+        st.chat_message("assistant", avatar="imgs/icon.png").markdown(f"입력하신 공연은 **{st.session_state.performance}**입니다.")
+        st.chat_message("assistant", avatar="imgs/icon.png").markdown("공연 정보를 불러오고 있습니다.")
         result = performance_analysis(st.session_state.performance)
         performance_visual(result)
 
@@ -209,7 +209,7 @@ if prompt := st.chat_input("질문을 입력하세요."):
         if st.button("이전 메뉴"):
             st.session_state.context = "menu"
         st.session_state.facility = prompt
-        st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png").markdown(f"입력하신 시설명은 **{st.session_state.facility}**입니다.")
+        st.chat_message("assistant", avatar="imgs/icon.png").markdown(f"입력하신 시설명은 **{st.session_state.facility}**입니다.")
         result = facility_analysis(st.session_state.facility)
         facility_visual(result)
 
@@ -217,14 +217,14 @@ if prompt := st.chat_input("질문을 입력하세요."):
 elif st.session_state.context == "date":
     if st.button("이전 메뉴"):
         st.session_state.context = "menu"
-    with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+    with st.chat_message("assistant", avatar="imgs/icon.png"):
         st.markdown("원하는 기간을 입력하세요.")
         st.markdown("<u>**입력 예시**</u>  \n 20240829  \n 202408  \n 2024", unsafe_allow_html=True)
 
 elif st.session_state.context == "region":
     if st.button("이전 메뉴"):
         st.session_state.context = "menu"
-    with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+    with st.chat_message("assistant", avatar="imgs/icon.png"):
         st.markdown("원하는 지역을 선택하세요.")  
         df = pd.read_excel('data/region_code_v2.xlsx')
         regions = df['region'].to_list()
@@ -232,16 +232,16 @@ elif st.session_state.context == "region":
         st.session_state.region = selected_region
        
     if selected_region:
-        with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+        with st.chat_message("assistant", avatar="imgs/icon.png"):
             st.markdown(f"선택한 지역은: **{selected_region}**입니다.")
-        with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+        with st.chat_message("assistant", avatar="imgs/icon.png"):
             st.markdown("시작 검색 기간과 종료 검색 기간을 입력하세요.")  
             st.markdown("<u>**입력 예시**</u>  \n 20240825~20240829", unsafe_allow_html=True)    
 
 elif st.session_state.context == "genre":
     if st.button("이전 메뉴"):
         st.session_state.context = "menu"
-    with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+    with st.chat_message("assistant", avatar="imgs/icon.png"):
         st.markdown("원하는 장르를 선택하세요.")  
         df = pd.read_excel('data/genre_code.xlsx')
         genre = df['genre'].to_list()
@@ -250,29 +250,29 @@ elif st.session_state.context == "genre":
         st.session_state.genre = selected_genre
 
     if selected_genre:
-        with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+        with st.chat_message("assistant", avatar="imgs/icon.png"):
             st.markdown(f"선택한 장르는 **{selected_genre}**입니다.")
-        with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+        with st.chat_message("assistant", avatar="imgs/icon.png"):
             st.markdown("시작 검색 기간과 종료 검색 기간을 입력하세요.")  
             st.markdown("<u>**입력 예시**</u>  \n 20240825~20240829", unsafe_allow_html=True)    
 
 elif st.session_state.context == "performance":
     if st.button("이전 메뉴"):
         st.session_state.context = "menu"
-    with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+    with st.chat_message("assistant", avatar="imgs/icon.png"):
         st.markdown("공연명을 입력하세요.")  
 
 elif st.session_state.context == "facility":
     if st.button("이전 메뉴"):
         st.session_state.context = "menu"
-    with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+    with st.chat_message("assistant", avatar="imgs/icon.png"):
         st.markdown("시설명을 입력하세요.")  
    
 elif st.session_state.context == "recommendation":
     if st.button("이전 메뉴"):
         st.session_state.context = "menu"
     # 성별, 연령, 장르명, 공연지역명, 장당금액
-    with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+    with st.chat_message("assistant", avatar="imgs/icon.png"):
         st.markdown("사용자의 성별, 선호 장르/지역/티켓 가격대를 선택하세요.")
         gender = ["남성", "여성"]
         selected_gender = st.selectbox("성별 선택", gender, placeholder="성별을 선택하세요.", key="selected_gender", index=None)
@@ -304,8 +304,8 @@ elif st.session_state.context == "recommendation":
             st.session_state.recommendation = '추천 공연은 '+', '.join(performance_names)+" 입니다."
 
     time.sleep(3)
-    with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+    with st.chat_message("assistant", avatar="imgs/icon.png"):
          st.markdown("추천 공연을 불러오고 있습니다.")
     time.sleep(3)
-    with st.chat_message("assistant", avatar="/Users/lne/Downloads/KOPIS/imgs/icon.png"):
+    with st.chat_message("assistant", avatar="imgs/icon.png"):
         st.markdown(st.session_state.recommendation)
