@@ -8,6 +8,7 @@ import os
 service_key = "9e01c797c9504aa68b51104412042f2a"
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
+print(current_dir)
 pre_path = os.path.join(current_dir, 'model', 'preprocessor.joblib')
 
 preprocessor = load(pre_path)
