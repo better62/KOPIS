@@ -11,6 +11,7 @@ preprocessor = load('model/preprocessor.joblib')
 performance_codes = load('model/performance_codes.joblib')
 file_id = "1A4hpBE6P7DSvpqA2nzHt_ksQ3mLQB1Uo"
 url = f'https://drive.google.com/uc?id={file_id}'
+output = 'model/preprocessor.joblib'
 gdown.download(url, output, quiet=True)
 transformed_data = load(output)
 
