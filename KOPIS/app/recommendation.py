@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 
 service_key = "9e01c797c9504aa68b51104412042f2a"
 
-preprocessor = load('./reprocessor.joblib')
+preprocessor = load('./preprocessor.joblib')
 transformed_data = load('./transformed_data.joblib')
 
 def make_df(gender, year, genre, region, price):
