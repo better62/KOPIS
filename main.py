@@ -163,7 +163,6 @@ if st.session_state.context == "menu":
 
 
 if prompt := st.chat_input("질문을 입력하세요."):
-    st.chat_message("user").markdown(prompt)
     
     if st.session_state.context == "date":
         if st.button("이전 메뉴"):
