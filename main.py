@@ -12,7 +12,6 @@ from app.facility import *
 from app.visualization import *
 from app.recommendation import *
 
-st.set_page_config(page_title="Your App Title", page_icon="🌞", layout="centered", initial_sidebar_state="auto", theme="light")
 
 st.markdown("""
     <style>
